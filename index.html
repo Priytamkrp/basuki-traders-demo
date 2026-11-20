@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BASUKI TRADERS | Men's Clothing & Wholesale Store, Dumka</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Arial, sans-serif; }
+    body { background: #f1f5f9; color: #0f172a; line-height: 1.55; }
+
+    /* Top Navbar */
+    .topbar {
+      background: #090d16;
+      color: #ffffff;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .brand-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo-box {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #2563eb, #38bdf8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+      flex-shrink: 0;
+    }
+    .brand-name { font-size: 16px; font-weight: 800; letter-spacing: 0.6px; }
+    .brand-sub { font-size: 11px; color: #94a3b8; }
+    .top-pill {
+      background: rgba(250, 204, 21, 0.14);
+      color: #facc15;
+      border: 1px solid rgba(250, 204, 21, 0.3);
+      font-size: 11.5px;
+      font-weight: 700;
+      padding: 5px 10px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: radial-gradient(circle at top right, #1d4ed8 0%, #0f172a 65%);
+      color: #ffffff;
+      padding: 40px 20px 36px;
+      text-align: center;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(56, 189, 248, 0.16);
+      color: #7dd3fc;
+      border: 1px solid rgba(125, 211, 252, 0.3);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+      letter-spacing: 0.4px;
+    }
+    .hero h1 {
+      font-size: 30px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      margin-bottom: 10px;
+    }
+    .hero p.tagline {
+      color: #cbd5e1;
+      font-size: 14.5px;
+      max-width: 520px;
+      margin: 0 auto 22px;
+    }
+    .cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      max-width: 460px;
+      margin: 0 auto;
+    }
+    .btn {
+      flex: 1 1 190px;
+      text-decoration: none;
+      padding: 13px 16px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 14px;
+      text-align: center;
+      transition: transform 0.15s ease, opacity 0.15s ease;
+    }
+    .btn:active { transform: scale(0.98); }
+    .btn-whatsapp {
+      background: #16a34a;
+      color: #ffffff;
+      box-shadow: 0 6px 16px rgba(22, 163, 74, 0.3);
+    }
+    .btn-map {
+      background: #ffffff;
+      color: #0f172a;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+    }
+
+    /* Trust Strip */
+    .trust-strip {
+      max-width: 760px;
+      margin: -18px auto 0;
+      padding: 0 16px;
+      position: relative;
+      z-index: 2;
+    }
+    .trust-grid {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 14px 12px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      text-align: center;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+    }
+    .trust-num { font-size: 15px; font-weight: 800; color: #1d4ed8; }
+    .trust-lbl { font-size: 11.5px; color: #475569; margin-top: 2px; }
+
+    /* Main Container */
+    .container { max-width: 760px; margin: 0 auto; padding: 28px 16px 20px; }
+
+    .section-title {
+      font-size: 18px;
+      font-weight: 800;
+      margin-bottom: 14px;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .section-title::before {
+      content: "";
+      width: 4px;
+      height: 18px;
+      background: #2563eb;
+      border-radius: 4px;
+      display: inline-block;
+    }
+
+    /* Collection Grid */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+    .item-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 18px 16px;
+      box-shadow: 0 3px 10px rgba(15, 23, 42, 0.04);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .tag {
+      display: inline-block;
+      font-size: 10.5px;
+      font-weight: 700;
+      color: #1d4ed8;
+      background: #eff6ff;
+      padding: 3px 8px;
+      border-radius: 6px;
+      margin-bottom: 8px;
+      width: fit-content;
+    }
+    .item-card h3 { font-size: 15.5px; color: #0f172a; margin-bottom: 6px; }
+    .item-card p { font-size: 12.5px; color: #475569; margin-bottom: 12px; }
+    .item-card a {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #15803d;
+      text-decoration: none;
+    }
+
+    /* Info Card */
+    .info-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 8px 18px;
+      margin-bottom: 24px;
+      box-shadow: 0 3px 10px rgba(15, 23, 42, 0.04);
+    }
+    .info-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 11px 0;
+      border-bottom: 1px solid #f1f5f9;
+      font-size: 13.5px;
+      gap: 12px;
+    }
+    .info-row:last-child { border-bottom: none; }
+    .info-label { color: #64748b; font-weight: 700; }
+    .info-val { color: #0f172a; font-weight: 600; text-align: right; }
+
+    /* Review & Social */
+    .review-box {
+      background: linear-gradient(135deg, #eff6ff, #f8fafc);
+      border: 1px solid #bfdbfe;
+      border-radius: 12px;
+      padding: 16px 18px;
+      margin-bottom: 20px;
+      font-size: 13.5px;
+      color: #1e3a8a;
+    }
+    .insta-bar {
+      text-align: center;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 14px;
+      margin-bottom: 22px;
+      font-size: 13.5px;
+    }
+    .insta-bar a {
+      color: #2563eb;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 12px;
+      color: #64748b;
+      padding: 8px 16px 28px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="topbar">
+    <div class="brand-left">
+      <div class="logo-box" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M5 5H13.5C15.7 5 17.2 6.3 17.2 8.2C17.2 9.6 16.4 10.6 15.1 11.1C16.7 11.5 17.8 12.7 17.8 14.5C17.8 16.8 16.1 18.5 13.5 18.5H5V5ZM8.2 10H12.8C13.8 10 14.4 9.5 14.4 8.6C14.4 7.7 13.8 7.3 12.8 7.3H8.2V10ZM8.2 16.2H13.1C14.2 16.2 14.9 15.6 14.9 14.5C14.9 13.4 14.2 12.8 13.1 12.8H8.2V16.2Z" fill="#ffffff"/>
+          <circle cx="19.5" cy="6.5" r="2.2" fill="#fde047"/>
+        </svg>
+      </div>
+      <div>
+        <div class="brand-name">BASUKI TRADERS</div>
+        <div class="brand-sub">Kuldeep Singh Rd, Dumka</div>
+      </div>
+    </div>
+    <div class="top-pill">★ 5.0 Rated</div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-badge">WHOLESALE & RETAIL MEN'S WEAR</div>
+    <h1>BASUKI TRADERS</h1>
+    <p class="tagline">Smart Styles, Budget-Friendly Rates & Trusted Quality in Dumka, Jharkhand</p>
+    <div class="cta-group">
+      <a class="btn btn-whatsapp" href="https://wa.me/917004540174?text=Hello%20Basuki%20Traders%2C%20I%20saw%20your%20website%20and%20want%20to%20enquire%20about%20stock%20%26%20rates." target="_blank">
+        WhatsApp Order / Inquiry
+      </a>
+      <a class="btn btn-map" href="https://www.google.com/maps/search/?api=1&query=Basuki+Traders+Kuldeep+Singh+Rd+Dumka+Jharkhand+814101" target="_blank">
+        Store Location & Map
+      </a>
+    </div>
+  </header>
+
+  <div class="trust-strip">
+    <div class="trust-grid">
+      <div>
+        <div class="trust-num">5.0 ★</div>
+        <div class="trust-lbl">Google Rating</div>
+      </div>
+      <div>
+        <div class="trust-num">Retail + Bulk</div>
+        <div class="trust-lbl">Fair Pricing</div>
+      </div>
+      <div>
+        <div class="trust-num">9:30 AM</div>
+        <div class="trust-lbl">Opens Daily</div>
+      </div>
+    </div>
+  </div>
+
+  <main class="container">
+    <h2 class="section-title">Featured Men's Collection</h2>
+    <div class="grid">
+      <div class="item-card">
+        <div>
+          <span class="tag">TRENDING</span>
+          <h3>Denim & Jeans</h3>
+          <p>Modern fits, stretchable & everyday denim in multiple shades.</p>
+        </div>
+        <a href="https://wa.me/917004540174?text=Hi%2C%20please%20share%20latest%20Jeans%20collection%20and%20rates." target="_blank">Check Price on WhatsApp →</a>
+      </div>
+
+      <div class="item-card">
+        <div>
+          <span class="tag">ESSENTIALS</span>
+          <h3>Casual & Formal Shirts</h3>
+          <p>Checked, solid & occasion shirts with neat stitching and comfort.</p>
+        </div>
+        <a href="https://wa.me/917004540174?text=Hi%2C%20please%20share%20latest%20Shirts%20collection%20and%20rates." target="_blank">Check Price on WhatsApp →</a>
+      </div>
+
+      <div class="item-card">
+        <div>
+          <span class="tag">DAILY WEAR</span>
+          <h3>T-Shirts & Lowers</h3>
+          <p>Lightweight t-shirts, collars & track pants at value prices.</p>
+        </div>
+        <a href="https://wa.me/917004540174?text=Hi%2C%20please%20share%20latest%20T-Shirts%20collection%20and%20rates." target="_blank">Check Price on WhatsApp →</a>
+      </div>
+
+      <div class="item-card">
+        <div>
+          <span class="tag">WHOLESALE</span>
+          <h3>Bulk & Shop Orders</h3>
+          <p>Direct wholesale supply options for local retailers and buyers.</p>
+        </div>
+        <a href="https://wa.me/917004540174?text=Hi%2C%20I%20want%20to%20enquire%20about%20Wholesale%20bulk%20rates." target="_blank">Enquire Wholesale →</a>
+      </div>
+    </div>
+
+    <h2 class="section-title">Store Information</h2>
+    <div class="info-card">
+      <div class="info-row">
+        <span class="info-label">Address</span>
+        <span class="info-val">Kuldeep Singh Rd, Dumka, Jharkhand 814101</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Timings</span>
+        <span class="info-val">Opens at 9:30 AM</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">WhatsApp / Call</span>
+        <span class="info-val">+91 70045 40174</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Specialty</span>
+        <span class="info-val">Men's Clothing & Wholesale</span>
+      </div>
+    </div>
+
+    <div class="review-box">
+      <strong>Verified Customer Feedback (5.0★ on Google):</strong><br />
+      "Best quality affordable rates — This shop is very great and best price."
+    </div>
+
+    <div class="insta-bar">
+      Latest Stock & Reels on Instagram:
+      <a href="https://www.instagram.com/basuki_traders_dumka/" target="_blank">@basuki_traders_dumka</a>
+    </div>
+  </main>
+
+  <footer>
+    © 2026 BASUKI TRADERS, Dumka • Concept & Design by PRIYTAM KUMAR
+  </footer>
+
+</body>
+</html>
